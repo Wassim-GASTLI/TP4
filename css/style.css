@@ -1,0 +1,129 @@
+body{margin: 0%;
+    background-color: #eef2ff;
+    font-family: "nunito","Segoe UI",
+    Arial, sans-serif;color: #25306B;}
+h1,h2{font-weight: 800;}
+.entete{
+    padding: 22px 40px;color: white;
+    background-color: #1B2A9E;
+}
+.logo{width: 112px;}
+.entete h1{
+    margin: 0%;font-size: 32px;
+    text-shadow: 2px 2px 4px #0B1460;
+}
+h1 span{
+    display: block;font-size: 41px;
+    font-weight: 900;color: #7DF9FF;
+}
+ul.devise{
+    list-style-type: none;padding: 0;
+    font-style: italic;font-size: 18px;letter-spacing: 1px;
+    color: #A9C8FF;
+}
+h1 + ul{
+    margin: 10px 0 0 0;
+}
+.accroche{
+    width: 240px;margin: 0;text-align: center;
+    font-style: italic;font-size: 15px;
+}
+form{
+    padding: 26px;border: 1px solid #dce3fb;
+    background-color: white;
+}
+.titre-section{
+    margin: 0%;padding: 8px 14px;font-size: 22px;
+    color: #14206B;background-color: #e9ebff;
+}
+.champ label{
+    font-size: 14px;font-weight: bold;color: #14206B ;
+}
+.input , select,textarea{
+    width: 100%;padding: 12px 14px;
+    border: 1.5px solid #c9d4F5;
+    font-family: "Nunito","Segoe UI",Arial, sans-serif;
+    font-size: 15px;color: #25306B;background-color: white;
+}
+#motivation{
+    height: 76px;
+}
+.bleu{background-color: #EAF7FF;
+    border:1.5px solid #BFE5F6 ;
+}
+.vert{background-color: #E9FBF3;
+    border:1.5px solid #BDEBD6 ;
+}
+.violet{background-color: #F0EEFF;
+    border:1.5px solid #D2CBF7 ;
+}
+.rose{background-color: #FFEFF6;
+    border:1.5px solid #F8C8DC ;
+}
+.ambre{background-color: #FFF7E6;
+    border:1.5px solid #F6DEAA ;
+}
+.carte{
+    padding: 14px 18px;
+}
+legend, .duo label{
+    font-size: 19px;font-weight: bold;
+    color:#14206B;
+}
+.violet label{
+    color: #4C1D95;
+}
+.rose label{
+    color:#BE185D ;
+}
+.option{
+    padding:12px 16px ;font-size: 15px;
+    background-color: white;cursor: pointer;
+}
+.reglement{
+    16px, cursor: pointer;
+}
+button{padding: 13px 30px;border: none;
+    font-family: "Nunito","Segoe UI",Arial, sans-serif;
+    height: 16px;font-weight: bold;cursor: pointer;
+}
+.envoyer{
+    color: white;background-color: #2563EB;
+}
+.reinit{
+    color:#14206B ;background-color:#E3E9F8 ;border: 1px solid #d0d9f0;
+}
+.pied{
+    padding: 18px 40px 10px 40px;color: #B8C7FF;
+    background-color: #101B5E;
+}
+.pied-haut{padding-bottom: 14px;border-bottom: 1px solid #3A55B8;}
+.marque p{
+    margin: 0%;
+}
+.marque strong{
+    display: block;font-size: 18px;
+    color: white;
+}
+.marque span{
+    font-size: 13px;font-style: italic;
+}
+.devise-pied{
+    margin: 0%;padding-left: 24px;border-left: 1px solid #3A55B8;
+    font-size: 14px;
+}
+ul.reseaux{list-style-type: none;margin: 0%;padding: 0%;
+}
+.reseaxu a{
+    display: block;background-color: #4054D6;
+    height: 40px;width: 40px;
+}
+.reseaux a:hover{
+    background-color: #7C3AED;
+}
+.reseaux a:active{
+    background-color:#2563EB ;
+}
+.copyright{
+    margin-top: 10px;text-align: center;font-size: 13px;
+}

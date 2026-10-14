@@ -1,0 +1,378 @@
+/* =====================================================================
+   mise-en-page.css – FICHIER FOURNI (ne pas modifier)
+
+   Ce fichier contient des notions qui seront vues dans les prochains
+   chapitres (Flexbox, coins arrondis, ombres, dégradés, animations...).
+   Il s'occupe uniquement de :
+     - la disposition des blocs (en ligne, en colonnes) ;
+     - les coins arrondis, les ombres et les petites animations ;
+     - les icônes et les pastilles colorées.
+
+   Toute la mise en forme du texte, des couleurs, des fonds, des marges
+   et des bordures est écrite PAR VOUS dans style.css.
+
+   Ce fichier est lié AVANT style.css : en cas de conflit, ce sont donc
+   vos règles (écrites plus loin dans la cascade) qui s'appliquent.
+   ===================================================================== */
+
+
+/* ---------- Base --------------------------------------------------------- */
+* { box-sizing: border-box; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 920px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+
+/* ---------- En-tête ------------------------------------------------------ */
+.entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.8rem;
+}
+
+.titre-bloc { flex: 1; }
+
+.devise {
+  display: flex;
+  gap: .9rem;
+}
+
+.devise li + li::before {                       /* séparateur « • » */
+  content: "\2022";
+  margin-right: .9rem;
+  color: #5EE7FF;
+}
+
+.accroche::before {                             /* icône entre deux filets */
+  content: "";
+  display: block;
+  height: 2rem;
+  margin-bottom: .5rem;
+  background:
+    url("../images/icones/blanc/equipe.svg") center / 1.9rem no-repeat,
+    linear-gradient(#8FB4FF, #8FB4FF) left center / 2.2rem 1px no-repeat,
+    linear-gradient(#8FB4FF, #8FB4FF) right center / 2.2rem 1px no-repeat;
+}
+
+
+/* ---------- Formulaire --------------------------------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 24px;
+  box-shadow: 0 10px 35px rgba(40, 60, 160, .14);
+}
+
+.titre-section {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  border-radius: 18px;
+}
+
+.grille {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.6rem;
+}
+
+.champ {
+  flex: 1 1 40%;
+  margin: 0;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.champ label { margin-bottom: .4rem; }
+
+.input, .carte select, textarea {
+  border-radius: 10px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.input:hover, .carte select:hover, textarea:hover { border-color: #9DB1EE; }
+
+.input:focus, .carte select:focus, textarea:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, .18);
+}
+
+.input:user-invalid {
+  border-color: #E5484D;
+  background-color: #FFF5F5;
+}
+
+::placeholder { color: #9AA6C8; }
+
+input[type="date"] { color: #8A94B8; }
+
+
+/* ---------- Cartes colorées --------------------------------------------- */
+.carte { border-radius: 14px; }
+
+fieldset.carte { margin: 0; }
+
+legend {
+  float: left;
+  width: 100%;
+  padding: 0;
+}
+
+legend + .options { clear: both; }
+
+legend, .carte > label {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: .7rem;
+}
+
+.options {
+  display: flex;
+  gap: .8rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  flex: 1;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(40, 60, 160, .08);
+  transition: transform .2s;
+}
+
+.option:hover { transform: translateY(-2px); }
+
+.option:has(:checked) { outline: 1.5px solid #BBD0FA; }
+
+.duo {
+  display: flex;
+  gap: 1rem;
+}
+
+.duo .carte { flex: 1; }
+.duo .rose  { flex: 1.25; }
+
+textarea { resize: vertical; }
+
+.reglement {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+}
+
+.reglement::before { order: -1; }
+
+
+/* ---------- Boutons ------------------------------------------------------ */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  border-radius: 12px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+button:hover  { transform: translateY(-3px); }
+button:active { transform: none; }
+
+.envoyer { box-shadow: 0 8px 20px rgba(37, 99, 235, .35); }
+
+
+/* ---------- Pied de page ------------------------------------------------- */
+.pied-haut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.marque {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+}
+
+.marque img { height: 4.2rem; }
+
+.devise-pied {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.reseaux {
+  display: flex;
+  gap: .7rem;
+}
+
+.reseaux a {
+  border-radius: 50%;
+  transition: transform .2s;
+  background-position: center;
+  background-size: 52%;
+  background-repeat: no-repeat;
+}
+
+.reseaux a:hover { transform: translateY(-3px); }
+
+
+/* =====================================================================
+   ICÔNES ET PASTILLES
+   ===================================================================== */
+
+/* ---------- Pastilles rondes (dégradé + icône) --------------------------- */
+.titre-section::before,
+legend::before,
+.carte > label::before,
+.reglement::before {
+  content: "";
+  flex: none;
+  width: 2.7rem;
+  height: 2.7rem;
+  background:
+    var(--icone) center / 52% no-repeat,
+    var(--degrade);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(30, 50, 160, .25);
+}
+
+.titre-section { --icone: url("../images/icones/blanc/user.svg");      --degrade: linear-gradient(135deg, #4F46E5, #6D28D9); }
+.bleu          { --degrade: linear-gradient(135deg, #1D9BF0, #2563EB); }
+.vert          { --degrade: linear-gradient(135deg, #10B981, #0D9488); }
+.violet        { --degrade: linear-gradient(135deg, #8B5CF6, #6D28D9); }
+.rose          { --degrade: linear-gradient(135deg, #F43F5E, #EC4899); }
+.ambre         { --degrade: linear-gradient(135deg, #F59E0B, #D97706); }
+
+.bleu legend              { --icone: url("../images/icones/blanc/laptop.svg"); }
+.vert legend              { --icone: url("../images/icones/blanc/engrenage.svg"); }
+label[for="annee"]        { --icone: url("../images/icones/blanc/diplome.svg"); }
+label[for="motivation"]   { --icone: url("../images/icones/blanc/message.svg"); }
+.reglement                { --icone: url("../images/icones/blanc/document.svg"); }
+
+
+/* ---------- Icônes des étiquettes de champs ------------------------------ */
+.champ label::before {
+  content: "";
+  width: 1.1rem;
+  height: 1.1rem;
+  background: var(--icone) center / contain no-repeat;
+}
+
+label[for="nom"],
+label[for="prenom"]     { --icone: url("../images/icones/bleu/user.svg"); }
+label[for="email"]      { --icone: url("../images/icones/bleu/mail.svg"); }
+label[for="tel"]        { --icone: url("../images/icones/bleu/phone.svg"); }
+label[for="mdp"]        { --icone: url("../images/icones/bleu/lock.svg"); }
+label[for="naissance"]  { --icone: url("../images/icones/bleu/calendar.svg"); }
+
+input[type="password"] {
+  padding-right: 2.6rem;
+  background: #fff url("../images/icones/bleu/oeil.svg") right .8rem center / 1.1rem no-repeat;
+}
+
+
+/* ---------- Liste déroulante -------------------------------------------- */
+.carte select {
+  appearance: none;
+  padding-right: 2.4rem;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%2314206B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") right .9rem center / .8rem no-repeat;
+}
+
+
+/* ---------- Boutons radio et cases à cocher personnalisés ---------------- */
+input[type="radio"],
+input[type="checkbox"] {
+  flex: none;
+  appearance: none;
+  margin: 0;
+  width: 1.45rem;
+  height: 1.45rem;
+  background-color: #fff;
+  border: 2px solid #8FA6EE;
+  cursor: pointer;
+  transition: background-color .2s, border-color .2s;
+}
+
+input[type="radio"] { border-radius: 50%; }
+
+input[type="radio"]:checked {
+  background-color: #2563EB;
+  border-color: #2563EB;
+  box-shadow: inset 0 0 0 4px #fff;
+}
+
+input[type="checkbox"] { border-radius: 6px; }
+
+input[type="checkbox"]:checked {
+  background: #2563EB url("../images/icones/blanc/coche.svg") center / 85% no-repeat;
+  border-color: #2563EB;
+}
+
+.python::before,
+.jeux::before {
+  content: "";
+  display: inline-block;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: .6rem;
+  vertical-align: middle;
+  background: center / contain no-repeat;
+}
+
+.python::before { background-image: url("../images/icones/bleu/terminal.svg"); }
+.jeux::before   { background-image: url("../images/icones/bleu/manette.svg"); }
+
+
+/* ---------- Icônes des boutons ------------------------------------------ */
+button::before {
+  content: "";
+  width: 1.3rem;
+  height: 1.3rem;
+  background: var(--icone) center / contain no-repeat;
+}
+
+.envoyer { --icone: url("../images/icones/blanc/envoyer.svg"); }
+.reinit  { --icone: url("../images/icones/bleu/actualiser.svg"); }
+
+
+/* ---------- Pied de page ------------------------------------------------- */
+.devise-pied::before {
+  content: "";
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("../images/icones/blanc/lieu.svg") center / contain no-repeat;
+  opacity: .8;
+}
+
+.reseaux .facebook  { background-image: url("../images/icones/blanc/facebook.svg"); }
+.reseaux .instagram { background-image: url("../images/icones/blanc/instagram.svg"); }
+.reseaux .video     { background-image: url("../images/icones/blanc/video.svg"); }
+.reseaux .mail      { background-image: url("../images/icones/blanc/mail.svg"); }
