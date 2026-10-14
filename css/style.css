@@ -81,7 +81,7 @@ legend, .duo label{
     background-color: white;cursor: pointer;
 }
 .reglement{
-    16px, cursor: pointer;
+    font-size:16px; cursor: pointer;
 }
 button{padding: 13px 30px;border: none;
     font-family: "Nunito","Segoe UI",Arial, sans-serif;
